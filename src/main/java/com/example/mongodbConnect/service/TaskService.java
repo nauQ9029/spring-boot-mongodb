@@ -37,6 +37,7 @@ public class TaskService {
         existingTask.setTitle(task.getTitle());
         existingTask.setCompleted(task.isCompleted());
 
+        System.out.println("Task update successfully");
         return taskRepository.save(existingTask);
     }
 
@@ -46,11 +47,17 @@ public class TaskService {
         }
 
         taskRepository.deleteById(id);
+        System.out.println("Task delete successfully");
     }
 
     public void createTaskItems() {
         System.out.println("Data creation started...");
-        taskRepository.save(new Task("1", "bomboclat sample", false));
+        Task task = new Task();
+        task.setId("1");
+        task.setTitle("bomboclat sample");
+        task.setCompleted(false);
+
+        taskRepository.save(task);
         System.out.println("Data creation complete...");
     }
 }
