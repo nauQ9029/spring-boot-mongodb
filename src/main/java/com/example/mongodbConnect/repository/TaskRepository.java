@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.example.mongodbConnect.model.Task;
+import com.example.mongodbConnect.model.entity.Task;
 
 public interface TaskRepository extends MongoRepository<Task, String> {
 
