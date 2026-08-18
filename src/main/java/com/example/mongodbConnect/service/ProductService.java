@@ -10,19 +10,25 @@ package com.example.mongodbConnect.service;
 import com.example.mongodbConnect.model.dto.ProductRecordDto;
 import com.example.mongodbConnect.model.entity.Product;
 import com.example.mongodbConnect.repository.ProductRepository;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @Service
 public class ProductService {
 
     private final ProductRepository productRepository;
+    private final MongoTemplate mongoTemplate;
 
     // Constructor injection
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, MongoTemplate mongoTemplate) {
         this.productRepository = productRepository;
+        this.mongoTemplate = mongoTemplate;
     }
 
     public ProductRecordDto.ProductResponse createProduct(ProductRecordDto.CreateProductRequests request) {
@@ -45,12 +51,22 @@ public class ProductService {
         } else if (category != null && minPrice != null && maxPrice != null) {
             products = productRepository.findAvailableProductsInPriceRange(category, minPrice, maxPrice);
         } else {
-            products = productRepository.findAll().stream()
-                    .filter(product -> product.isInStock())
-                    .filter(product -> category == null || product.getCategory().equalsIgnoreCase(category))
-                    .filter(product -> minPrice == null || product.getPrice().compareTo(minPrice) >= 0)
-                    .filter(product -> maxPrice == null || product.getPrice().compareTo(maxPrice) <= 0)
-                    .toList();
+            Query query = new Query().addCriteria(Criteria.where("inStock").is(true));
+            if (category != null) {
+                query.addCriteria(Criteria.where("category")
+                        .regex("^" + Pattern.quote(category) + "$", "i"));
+            }
+            if (minPrice != null || maxPrice != null) {
+                Criteria priceCriteria = Criteria.where("price");
+                if (minPrice != null) {
+                    priceCriteria = priceCriteria.gte(minPrice);
+                }
+                if (maxPrice != null) {
+                    priceCriteria = priceCriteria.lte(maxPrice);
+                }
+                query.addCriteria(priceCriteria);
+            }
+            products = mongoTemplate.find(query, Product.class);
         }
 
         return products.stream()
