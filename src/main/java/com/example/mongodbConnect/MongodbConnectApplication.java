@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MongodbConnectApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MongodbConnectApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(MongodbConnectApplication.class, args);
+    }
 }
