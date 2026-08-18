@@ -1,1 +1,17 @@
+com\example\mongodbConnect\controller\ProductController.class
+com\example\mongodbConnect\model\dto\ProductRecordDto$ProductResponse.class
+com\example\mongodbConnect\controller\TaskController.class
+com\example\mongodbConnect\controller\HomeController.class
+com\example\mongodbConnect\model\dto\TaskRecordDto$TaskResponse.class
+com\example\mongodbConnect\model\dto\ProductRecordDto.class
+com\example\mongodbConnect\model\entity\Product.class
+com\example\mongodbConnect\repository\ProductRepository.class
+com\example\mongodbConnect\model\dto\TaskRecordDto$CreateTaskRequest.class
+com\example\mongodbConnect\model\dto\TaskRecordDto.class
+com\example\mongodbConnect\model\entity\Task.class
+com\example\mongodbConnect\model\dto\ProductRecordDto$CreateProductRequests.class
+com\example\mongodbConnect\repository\TaskRepository.class
+com\example\mongodbConnect\model\dto\TaskRecordDto$UpdateTaskRequest.class
+com\example\mongodbConnect\service\TaskService.class
 com\example\mongodbConnect\MongodbConnectApplication.class
+com\example\mongodbConnect\service\ProductService.class

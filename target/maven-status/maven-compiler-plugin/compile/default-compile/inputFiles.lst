@@ -1,1 +1,13 @@
-D:\Works\springboot\mongodbConnect\src\main\java\com\example\mongodbConnect\MongodbConnectApplication.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\config\WebConfig.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\controller\HomeController.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\controller\ProductController.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\controller\TaskController.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\model\dto\ProductRecordDto.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\model\dto\TaskRecordDto.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\model\entity\Product.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\model\entity\Task.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\MongodbConnectApplication.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\repository\ProductRepository.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\repository\TaskRepository.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\service\ProductService.java
+D:\Works\learning\springboot\spring-boot-mongodb\BE\src\main\java\com\example\mongodbConnect\service\TaskService.java
